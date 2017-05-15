@@ -1,0 +1,14 @@
+﻿<h1>Leagues</h1> <br />
+
+<table class="table table-hover">
+
+    <tbody>
+        <tr ng-repeat="competition in competitions">
+            <td>
+                <a href="/#/fixtures/{{competition.id}}">{{competition.caption}}</a>
+            </td>           
+        </tr>
+
+    </tbody>
+</table>
+<div class="alert alert-danger" ng-show="statusMessage">{{statusMessage}}</div>

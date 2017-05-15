@@ -1,0 +1,70 @@
+﻿.mainContent {
+    margin-top: 60px;
+}
+
+.center {
+    display: table;
+    width: 100%;
+    height: 50px; /* for demo only */
+}
+
+.v-align-right {
+    padding: 5px;
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+    text-align: right;
+}
+
+.box-img-right {
+    width: 50px;
+    height: 50px;
+    display: inline-block;
+    vertical-align: central;
+    text-align: center;
+}
+.box-img {
+    width: 85px;
+    height: 85px;
+    vertical-align: central;
+}
+
+.v-align-left {
+    padding: 5px;
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+    text-align: left;
+}
+
+.box-img-left {
+    width: 50px;
+    height: 50px;
+    display: inline-block;
+    vertical-align: central;
+    text-align: center;
+}
+
+.v-align-mid {
+    padding: 5px;
+    display: table-cell;
+    text-align: center;
+    background-color: white;
+    vertical-align: middle;
+}
+
+
+.box-text {
+    max-height: 50px;
+    display: inline-block;
+    vertical-align: central;
+}
+
+img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.thumbnail {
+    padding:0px;
+}

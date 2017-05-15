@@ -1,0 +1,19 @@
+﻿<h1>Fixtures</h1> <br />
+<div class="form-group">
+    <label for="nameFilter">Fixtures filter:</label>
+    <input type="text" class="form-control" id="nameFilter" ng-model="namePart">
+</div>
+<table ng-hide="statusMessage" class="table table-hover">
+    <tbody>
+        <tr ng-repeat="fixture in fixtures | FixturesFilter: namePart">
+            <td>
+                <a href="/#/Review/{{fixture.id}}">{{fixture.homeTeamName}} vs {{fixture.awayTeamName}}</a>
+            </td>
+            <td>
+                {{fixture.date | date:' dd-MM-yyyy HH:mm'}}
+            </td>
+        </tr>
+
+    </tbody>
+</table>
+<div ng-show="statusMessage" class="alert alert-danger">{{statusMessage}}</div>

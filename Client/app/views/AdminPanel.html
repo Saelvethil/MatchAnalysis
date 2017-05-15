@@ -1,0 +1,43 @@
+﻿<div>
+    ADMIN PANEL<br /><br />
+</div>
+
+<div class="form-group">
+    <label for="usernameFilter">Users filter:</label>
+    <input type="text" class="form-control" id="usernameFilter" ng-model="namePart">
+</div>
+
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>User</th>
+            <th>Role</th>
+            <th></th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="user in users | UsersFilter: namePart">
+            <td>
+                {{user.UserName}}
+            </td>
+            <td>
+                <select ng-model="user.RoleName">
+                    <option value="Admin">Admin</option>
+                    <option value="Moderator">Moderator</option>
+                    <option value="User">User</option>
+                </select>
+            </td>
+            <td>
+                <button type="button" class="btn btn-success" ng-click="save(user.UserId, user.RoleName)"><span class="glyphicon glyphicon-floppy-save" aria-hidden="true"></span> Save</button>
+
+            </td>
+            <td>
+                <button type="button" class="btn btn-danger" ng-click="remove(user.UserId)"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span> Remove</button>
+            </td>
+
+        </tr>
+
+    </tbody>
+</table>
+<div class="alert alert-danger" ng-show="statusMessage">{{statusMessage}}</div>

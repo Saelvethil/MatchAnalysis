@@ -1,0 +1,29 @@
+﻿<h1>Users Ranking</h1> <br />
+
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>User</th>
+            <th>Average rating</th>
+            <th>Ratings count</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="entry in ranking">
+            <td>
+                {{$index + 1}}
+            </td>
+            <td>
+                {{entry.UserName}}
+            </td>
+            <td>
+                {{entry.Value}}
+            </td>
+            <td>
+                {{entry.RatingsCount}}
+            </td>
+        </tr>
+       
+    </tbody>
+</table>

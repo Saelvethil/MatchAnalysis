@@ -1,0 +1,36 @@
+﻿
+
+<h2>{{fixture.homeTeamName}} vs {{fixture.awayTeamName}}</h2>
+<h5>{{fixture.date | date:' dd-MM-yyyy HH:mm'}}</h5><br />
+<button class="btn btn-default" ng-show="SessionService.isLoggedIn" ng-click="createReview(fixture.id)">Create Review</button>
+<br />
+<table ng-hide="statusMessage" class="table table-hover">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Prediction</th>
+            <th ng-show="SessionService.isModerator"></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="review in reviews">
+            <td>
+                <a href="/#/reviewInfo/{{review.Id}}">{{review.Title}} </a>
+            </td>
+            <td>
+                <a href="/#/reviewInfo/{{review.Id}}">
+                    <label ng-show="review.Prediction === 0">Draw</label>
+                    <label ng-show="review.Prediction === 1">{{fixture.homeTeamName}}</label>
+                    <label ng-show="review.Prediction === 2">{{fixture.awayTeamName}}</label>
+                </a>
+            </td>
+            <td ng-show="SessionService.isModerator">
+                <button type="button" class="btn btn-danger" ng-click="removeReview(review.Id,fixture.id)">
+                    <span class="glyphicon glyphicon-remove"></span>  Remove
+                </button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<br />
+<div ng-show="statusMessage" class="alert alert-info">{{statusMessage}}</div>

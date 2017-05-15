@@ -1,0 +1,19 @@
+﻿<form role="form" ng-submit="create()">
+    <div class="form-group">
+        <h2>{{fixture.homeTeamName}} vs {{fixture.awayTeamName}}</h2>
+        <label for="title">Title</label>
+        <input type="text" class="form-control" placeholder="Title" ng-model="createForm.title">
+    </div>
+    <div class="form-group">
+        <label for="review">Review</label>
+        <textarea class="form-control" rows="10" placeholder="Review" ng-model="createForm.body"></textarea>
+    </div>
+    <div class="form-group">
+        <label class="radio-inline"><input type="radio" value="1" ng-model="createForm.prediction">{{fixture.homeTeamName}}</label>
+        <label class="radio-inline"><input type="radio" value="0" ng-model="createForm.prediction">Draw</label>
+        <label class="radio-inline"><input type="radio" value="2" ng-model="createForm.prediction">{{fixture.awayTeamName}}</label>
+    </div>
+
+    <div class="alert alert-danger" ng-show="statusMessage">{{statusMessage}}</div>
+    <button type="submit" class="btn btn-default">Add Review</button>
+</form>

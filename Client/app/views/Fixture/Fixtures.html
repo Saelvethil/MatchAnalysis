@@ -1,0 +1,60 @@
+﻿<h1>Fixtures</h1> <br />
+
+<table ng-hide="statusMessage" class="table table-hover">
+    <tbody>
+        <tr ng-repeat="fixture in fixtures">
+            <td>
+                <!--<div class="center">
+                    <div class="v-align">
+                        <div class="box-img">
+                            <img src="{{fixture.homeTeam.crestUrl}}" onerror="this.src='http://www.realclearpolitics.com/asset/img/checkbox_unchecked.jpg'" class="img-rounded" alt="Cinque Terre" />
+                        </div>
+                        <div class="box-text">
+                            <a href="/#/Review/{{fixture.id}}">{{fixture.homeTeamName}} vs {{fixture.awayTeamName}}</a>
+                        </div>
+                        <div class="box-img">
+                            <img src="{{fixture.awayTeam.crestUrl}}" class="img-rounded" alt="Cinque Terre" />
+                        </div>
+                    </div>
+                </div>-->
+                <div class="center">
+                    <div class="v-align-right">
+                        <div class="box-img-right">
+                            <img src="{{fixture.homeTeam.crestUrl}}" onerror="this.src='http://www.realclearpolitics.com/asset/img/checkbox_unchecked.jpg'" class="img-rounded" alt="Cinque Terre" />
+                        </div>
+                    </div>
+                </div>
+            </td>
+
+            <td>
+                <div class="center">
+                    <div class="v-align-mid">
+                        <div class="box-text">
+                            <a href="/#/Review/{{fixture.id}}">{{fixture.homeTeamName}} vs {{fixture.awayTeamName}}</a>
+                        </div>
+                    </div>
+                </div>
+            </td>
+            <td>
+                <div class="center">
+                    <div class="v-align-left">
+                        <div class="box-img-left">
+                            <img src="{{fixture.awayTeam.crestUrl}}" onerror="this.src='http://www.realclearpolitics.com/asset/img/checkbox_unchecked.jpg'" class="img-rounded" alt="Cinque Terre" />
+                        </div>
+                    </div>
+                </div>
+            </td>
+            <td>
+                <div class="center">
+                    <div class="v-align">
+                        <div class="box-middle">
+                            {{fixture.date | date:' dd-MM-yyyy HH:mm'}}
+                        </div>
+                    </div>
+                </div>
+            </td>
+        </tr>
+
+    </tbody>
+</table>
+<div ng-show="statusMessage" class="alert alert-danger">{{statusMessage}}</div>
